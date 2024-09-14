@@ -17,6 +17,7 @@ def execute_dns_zone_transfer(domain_name, base_dir, ip):
         with open(output_file, 'w') as f:
             f.write(result.stdout)
         print(f"Résultat du transfert de zone DNS pour {domain_name} écrit dans {output_file}")
+        print("Ne pas oublier d'ajouter les noms de domaines dans le fichier etc/hosts")
     except subprocess.CalledProcessError as e:
         print(f"Erreur lors de l'exécution de la commande dig: {e}")
         print(f"Commande : {' '.join(command)}")
